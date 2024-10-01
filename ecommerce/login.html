@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site com Bootstrap</title>
+    <!--Adicionar o bootstrap ou link ou caminho
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="container">
+          <section class="section py-4">
+            <div class="container">
+              <div class="row justify-content-center">
+                <!--Adicionado col-lg-4 para deixar mais concentrado o layout--> 
+                <div class="col-lg-4 col-md-6 flex-column align-items-center ">
+                  <div class="card">
+                    
+                    <div class="card-body"> <!--Adicionado Linha Card-Body--> 
+
+                      <div class="pt-4 pb-2">
+                        <h5 class="card-title text-center pb-0 fs-4">Fazer Login</h5>
+                        <p class="text-center small">Insira seu nome de usuário e senha para fazer login</p>
+                      </div>
+                      <form class="row g-3">
+                        <div class="col-12">
+                          <label  class="form-label">Nome de Usuário</label>
+                          <div class="input-group">
+                            <span class="input-group-text">@</span>
+                            <input type="text" name="username" class="form-control" required>
+                          </div>
+                        </div>    
+                        <div class="col-12">
+                          <label for="yourPassword" class="form-label">Senha</label>
+                          <input type="password" name="password" class="form-control" required>
+                        </div>
+
+                        <div class="col-12"> <!--Adicionado Linha checkBox--> 
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="true">
+                            <label class="form-check-label" for="rememberMe">Lembre-se de mim</label>
+                          </div>
+                        </div> <!--Adicionado Final Linha checkBox--> 
+
+                        <div class="col-12">
+                          <a href="dashboard.html" class="btn btn-primary w-100" role="button">Login</a>    
+                        </div>
+
+                        <div class="col-12"> <!--Adicionado Linha New Account--> 
+                          <p class="small">Não tem uma conta? <a href="registro.html">Criar uma conta</a></p>
+                        </div> <!--Finalizado Linha New Account--> 
+
+                      </form>
+
+                    </div> <!--Adicionado Linha fechamento Card-Body--> 
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+</body>
+</html>

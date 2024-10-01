@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site com Bootstrap</title>
+    <!--Adicionar o bootstrap ou link ou caminho
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    -->
+  <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="container">
+          <section class="section py-4">
+            <div class="container">
+              <div class="row justify-content-center">                
+                <div class="col-lg-4 col-md-6 flex-column align-items-center ">
+                  <div class="card">
+                    <div class="card-body"> 
+
+                      <div class="pt-4 pb-3">
+                        <h5 class="card-title text-center fs-4">Criar Conta</h5>
+                        <p class="text-center small">Insira suas informações pessoais para criar uma conta</p>
+                      </div>
+    
+                      <form class="row g-3">
+                        <div class="col-12">
+                          <label class="form-label">Nome Completo</label>
+                          <input type="text" class="form-control" required>
+                        </div>
+    
+                        <div class="col-12">
+                          <label class="form-label">Email</label>
+                          <input type="email" class="form-control" required>
+                        </div>
+    
+                        <div class="col-12">
+                          <label class="form-label">Nome de Usuário</label>
+                          <div class="input-group has-validation">
+                            <span class="input-group-text">@</span>
+                            <input type="text" class="form-control"  required>
+                          </div>
+                        </div>
+    
+                        <div class="col-12">
+                          <label class="form-label">Senha</label>
+                          <input type="password" class="form-control" required>
+                        </div>
+    
+                        <div class="col-12">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value=""  required>
+                            <label class="form-check-label" for="acceptTerms">Eu, concordo com os <a href="#">termos e condições</a></label>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <a href="login.html" class="btn btn-primary w-100" role="button">Criar uma conta</a>
+                        </div>
+                      </form>                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+</body>
+</html>

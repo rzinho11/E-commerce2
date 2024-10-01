@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Tela de Vendas</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+        <div class="d-flex align-items-center justify-content-between w-100">
+            <a href="dashboard.html" class="logo d-flex align-items-center">
+                <span class="d-none d-lg-block">ECommerce</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+
+            <div class="search-bar flex-grow-1 mx-2">
+                <form class="search-form d-flex align-items-center" method="POST" action="#">
+                    <input type="text" name="query" placeholder="Pesquisar" title="Enter search keyword"
+                        class="form-control">
+                    <button type="submit" title="Search" class="btn btn-outline-secondary"><i
+                            class="bi bi-search"></i></button>
+                </form>
+            </div>
+
+            <!-- Ícone do Carrinho -->
+            <div class="cart-icon ms-2 pt-3 p-2"> <!-- Adicionando margem à esquerda -->
+                <a href="carrinho.html" class="btn btn-light position-relative">
+                    <i class="bi bi-cart-fill" style="font-size: 24px;"></i>
+                    <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger"
+                        id="cart-count">
+                        3
+                        <span class="visually-hidden">itens no carrinho</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="cliente.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Clientes</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="produto.html">
+                    <i class="bi bi-menu-button-wide"></i><span>Produtos</span>
+                </a>
+            </li><!-- End Components Nav -->
+
+            <!--li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="venda.html">
+                    <i class="bi bi-journal-text"></i><span>Vendas</span>
+                </a>
+            </li--><!-- End Forms Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse"
+                    href="promocao.html">
+                    <i class="bi bi-layout-text-window-reverse"></i><span>Promoções</span>
+                </a>
+            </li><!-- End Tables Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="contato.html">
+                    <i class="bi bi-envelope"></i>
+                    <span>Contato</span>
+                </a>
+            </li><!-- End Contact Page Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="login.html">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Login</span>
+                </a>
+            </li><!-- End Login Page Nav -->
+
+        </ul>
+    </aside><!-- End Sidebar-->
+
+
+    <!-- ======= Main Content ======= -->
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Produtos Disponíveis</h1>
+        </div><!-- End Page Title -->
+
+        <section class="section">
+            <!-- Campo de pesquisa -->
+            <div class="col-12 mb-3">
+                <div class="card">
+                    <input type="text" id="searchBar" class="form-control mb-2" placeholder="Pesquisar produtos..."
+                        onkeyup="filterProducts()">
+                    <a href="#" class="btn btn-primary w-100"
+                        onclick="addToCart('Produto Escolhido adicionado', 50); window.location.href='carrinho.html';">
+                        Adicionar ao Carrinho
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Produto 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <a href="produto_visualiza_1.html">
+                            <img src="assets/imagem/ipone15.jpeg" class="card-img-top" alt="Produto 1">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Iphone 15 Pro Max</h5>
+                            <p class="card-text">No precinho para você!</p>
+                            <h6>R$ 50,00</h6>
+                            <a href="#" class="btn btn-primary"
+                                onclick="addToCart('Produto 1', 50); window.location.href='carrinho.html';">
+                                Adicionar ao Carrinho
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <a href="produto_visualiza_2.html">
+                            <img src="assets/imagem/ipone5.jpeg" class="card-img-top" alt="Produto 2">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Iphone 5</h5>
+                            <p class="card-text">Uma relíquia incrível e única!</p>
+                            <h6>R$ 100,00</h6>
+                            <a href="#" class="btn btn-primary"
+                                onclick="addToCart('Produto 2', 100); window.location.href='carrinho.html';">
+                                Adicionar ao Carrinho
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <a href="produto_visualiza_3.html">
+                            <img src="assets/imagem/iponecarrega.jpeg" class="card-img-top" alt="Produto 3">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Iphone Charger - Original</h5>
+                            <p class="card-text">Carrega em até 24 horas!</p>
+                            <h6>R$ 150,00</h6>
+                            <a href="#" class="btn btn-primary"
+                                onclick="addToCart('Produto 1', 150); window.location.href='carrinho.html';">
+                                Adicionar ao Carrinho
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main><!-- End Main Content -->
+    <script>
+        function addToCart(productId) {
+            // Verifica se já existe um carrinho no localStorage
+            let cart = localStorage.getItem('cart');
+
+            if (!cart) {
+                cart = {}; // Se não houver carrinho, cria um novo
+            } else {
+                cart = JSON.parse(cart); // Converte o carrinho de string para objeto
+            }
+
+            // Verifica se o produto já está no carrinho
+            if (cart[productId]) {
+                cart[productId]++; // Se já estiver, aumenta a quantidade
+            } else {
+                cart[productId] = 1; // Caso contrário, adiciona o produto com quantidade 1
+            }
+
+            // Salva o carrinho atualizado no localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Alerta para o usuário que o produto foi adicionado
+            alert('Produto ' + productId + ' adicionado ao carrinho!');
+
+            console.log('Carrinho atualizado:', cart); // Exibe o carrinho no console para fins de teste
+        }
+    </script>
+</body>
+
+</html>

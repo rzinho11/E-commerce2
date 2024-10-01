@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Carrinho de Compras</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="dashboard.html" class="logo d-flex align-items-center">
+        <span class="d-none d-lg-block">ECommerce</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Pesquisar" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="cliente.html">
+          <i class="bi bi-grid"></i>
+          <span>Clientes</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="produto.html">
+          <i class="bi bi-menu-button-wide"></i><span>Produtos</span>
+        </a>
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="venda.html">
+          <i class="bi bi-journal-text"></i><span>Vendas</span>
+        </a>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="promocao.html">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Promoções</span>
+        </a>
+      </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-envelope"></i>
+          <span>Contato</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="login.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Login</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+    </ul>
+  </aside><!-- End Sidebar-->
+
+  <!-- ======= Main Content ======= -->
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Carrinho de Compras</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Seu Carrinho</h5>
+
+              <!-- Tabela do Carrinho de Compras -->
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Preço Unitário</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Subtotal</th>
+                    <th scope="col">Ação</th>
+                  </tr>
+                </thead>
+                <tbody id="cart-items">
+                  <!-- Os itens do carrinho serão adicionados dinamicamente aqui -->
+                  <tr>
+                    <td>Produto 1</td>
+                    <td>R$ 50,00</td>
+                    <td><input type="number" class="form-control" value="1" min="1" onchange="updateSubtotal(this)">
+                    </td>
+                    <td>R$ 50,00</td>
+                    <td><button class="btn btn-danger btn-sm" onclick="removeItem(this)">Remover</button></td>
+                  </tr>
+
+                  <tr>
+                    <td>Produto 2</td>
+                    <td>R$ 100,00</td>
+                    <td><input type="number" class="form-control" value="1" min="1" onchange="updateSubtotal(this)">
+                    </td>
+                    <td>R$ 100,00</td>
+                    <td><button class="btn btn-danger btn-sm" onclick="removeItem(this)">Remover</button></td>
+                  </tr>
+                  <tr>
+                    <td>Produto 3</td>
+                    <td>R$ 150,00</td>
+                    <td><input type="number" class="form-control" value="1" min="1" onchange="updateSubtotal(this)">
+                    </td>
+                    <td>R$ 150,00</td>
+                    <td><button class="btn btn-danger btn-sm" onclick="removeItem(this)">Remover</button></td>
+                  </tr>
+                </tbody>
+
+              </table>
+
+              <!-- Total -->
+              <div class="text-end">
+                <h4>Total: <span id="cart-total">R$ 250,00</span></h4>
+                <a href="promocao.html" class="btn btn-primary">Continuar em Promoção</a>
+                <a href="venda.html" class="btn btn-primary">Continuar Comprando</a>
+                <a href="finalizacao.html" class="btn btn-primary">Finalizar Venda</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End Main Content -->
+
+  <script>
+    function updateSubtotal(input) {
+      // Obter o preço unitário e a quantidade para calcular o subtotal
+      let row = input.closest('tr');
+      let price = parseFloat(row.cells[1].innerText.replace('R$', '').replace(',', '.'));
+      let quantity = input.value;
+      let subtotal = price * quantity;
+
+      // Atualizar o subtotal na tabela
+      row.cells[3].innerText = 'R$ ' + subtotal.toFixed(2).replace('.', ',');
+
+      // Atualizar o total do carrinho
+      updateTotal();
+    }
+
+    function updateTotal() {
+      let total = 0;
+      let subtotals = document.querySelectorAll('#cart-items tr td:nth-child(4)');
+
+      // Somar todos os subtotais
+      subtotals.forEach(function (subtotal) {
+        total += parseFloat(subtotal.innerText.replace('R$', '').replace(',', '.'));
+      });
+
+      // Atualizar o valor total no HTML
+      document.getElementById('cart-total').innerText = 'R$ ' + total.toFixed(2).replace('.', ',');
+    }
+
+    function removeItem(button) {
+      // Remover a linha do produto
+      let row = button.closest('tr');
+      row.remove();
+
+      // Atualizar o total do carrinho
+      updateTotal();
+    }
+  </script>
+
+</body>
+
+</html>
