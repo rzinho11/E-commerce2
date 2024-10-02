@@ -22,18 +22,30 @@
 
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
-        <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center justify-content-between w-100">
             <a href="dashboard.html" class="logo d-flex align-items-center">
                 <span class="d-none d-lg-block">RIGS Store</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
-        </div>
 
-        <div class="search-bar">
-            <form class="search-form d-flex align-items-center" method="POST" action="#">
-                <input type="text" name="query" placeholder="Pesquisar" title="Enter search keyword">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-            </form>
+            <div class="search-bar flex-grow-1 mx-2">
+                <form class="search-form d-flex align-items-center" method="POST" action="#">
+                    <input type="text" name="query" placeholder="Pesquisar" title="Enter search keyword"
+                        class="form-control">
+                    <button type="submit" title="Search" class="btn btn-outline-secondary"><i
+                            class="bi bi-search"></i></button>
+                </form>
+            </div>
+
+            <!-- Ícone do Carrinho -->
+            <div class="cart-icon ms-2 pt-3 p-2"> <!-- Adicionando margem à esquerda -->
+                <a href="carrinho.html" class="btn btn-light position-relative">
+                    <i class="bi bi-cart-fill" style="font-size: 24px;"></i>
+                    <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-secondary"
+                        id="cart-count">
+                    </span>
+                </a>
+            </div>
         </div>
     </header><!-- End Header -->
 
@@ -61,14 +73,13 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse"
-                    href="promocao.html">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="promocao.html">
                     <i class="bi bi-layout-text-window-reverse"></i><span>Promoções</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="dashboard.html">
+                <a class="nav-link collapsed" href="contato.html">
                   <i class="bi bi-envelope"></i><span>Contato</span>
                 </a>
             </li>
