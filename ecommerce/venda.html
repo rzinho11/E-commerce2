@@ -69,7 +69,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="venda.html">
+                <a class="nav-link" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="dashboard.html">
                     <i class="bi bi-journal-text"></i><span>Vendas</span>
                 </a>
             </li>
@@ -124,9 +124,8 @@
                             <img src="assets/imagem/ipone15.jpeg" class="card-img-top" alt="Produto 1">
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">Iphone 15 Pro Max</h5>
-                            <p class="card-text">No precinho para você!</p>
-                            <h6>R$ 50,00</h6>
+                            <h5 class="card-title">iPhone 15 Pro Max (256Gb)</h5>
+                            <h6>R$ 4.799,90</h6>
                             <a href="#" class="btn btn-primary"
                                 onclick="addToCart('Produto 1', 50); window.location.href='carrinho.html';">
                                 Adicionar ao Carrinho
@@ -142,9 +141,8 @@
                             <img src="assets/imagem/ipone5.jpeg" class="card-img-top" alt="Produto 2">
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">Iphone 5</h5>
-                            <p class="card-text">Uma relíquia incrível e única!</p>
-                            <h6>R$ 100,00</h6>
+                            <h5 class="card-title">iPhone 5 (16Gb)</h5>
+                            <h6>R$ 419,90</h6>
                             <a href="#" class="btn btn-primary"
                                 onclick="addToCart('Produto 2', 100); window.location.href='carrinho.html';">
                                 Adicionar ao Carrinho
@@ -160,11 +158,10 @@
                             <img src="assets/imagem/iponecarrega.jpeg" class="card-img-top" alt="Produto 3">
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">Iphone Charger - Original</h5>
-                            <p class="card-text">Carrega em até 24 horas!</p>
-                            <h6>R$ 150,00</h6>
+                            <h5 class="card-title">Carregador Turbo 20W Usb-c</h5>
+                            <h6>R$ 229,85</h6>
                             <a href="#" class="btn btn-primary"
-                                onclick="addToCart('Produto 1', 150); window.location.href='carrinho.html';">
+                                onclick="addToCart('Produto 3', 150); window.location.href='carrinho.html';">
                                 Adicionar ao Carrinho
                             </a>
                         </div>
@@ -197,7 +194,7 @@
             localStorage.setItem('cart', JSON.stringify(cart));
 
             // Alerta para o usuário que o produto foi adicionado
-            alert('Produto ' + productId + ' adicionado ao carrinho!');
+            alert(productId + ' adicionado ao carrinho!');
 
             console.log('Carrinho atualizado:', cart); // Exibe o carrinho no console para fins de teste
         }
