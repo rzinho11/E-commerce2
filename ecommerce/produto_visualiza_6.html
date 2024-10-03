@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>RIGS Store - Visualização do Produto</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <style>
+        body {
+            padding-top: 60px;
+            /* Para que o conteúdo não fique escondido atrás do header fixo */
+        }
+
+        main {
+            margin-top: 80px;
+            /* Ajuste para garantir que o conteúdo principal não entre atrás do menu */
+        }
+
+        /* Adicionando estilo para a imagem */
+        .product-image {
+            width: 100%;
+            /* Ajusta a largura para 100% do contêiner */
+            height: auto;
+            /* Mantém a proporção da imagem */
+            object-fit: cover;
+            /* Cobre o contêiner sem distorcer */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+        <div class="d-flex align-items-center justify-content-between w-100">
+            <a href="dashboard.html" class="logo d-flex align-items-center">
+                <span class="d-none d-lg-block">RIGS Store</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+
+            <div class="search-bar flex-grow-1 mx-2">
+                <form class="search-form d-flex align-items-center" method="POST" action="#">
+                    <input type="text" name="query" placeholder="Pesquisar" title="Enter search keyword"
+                        class="form-control">
+                    <button type="submit" title="Search" class="btn btn-outline-secondary"><i
+                            class="bi bi-search"></i></button>
+                </form>
+            </div>
+
+            <!-- Ícone do Carrinho -->
+            <div class="cart-icon ms-2 pt-3 p-2"> <!-- Adicionando margem à esquerda -->
+                <a href="carrinho.html" class="btn btn-light position-relative">
+                    <i class="bi bi-cart-fill" style="font-size: 24px;"></i>
+                    <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger"
+                        id="cart-count">
+                        3
+                        <span class="visually-hidden">itens no carrinho</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="cliente.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Clientes</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="produto.html">
+                    <i class="bi bi-menu-button-wide"></i><span>Produtos</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#forms-nav" href="venda.html">
+                    <i class="bi bi-journal-text"></i><span>Vendas</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav" href="promocao.html">
+                    <i class="bi bi-layout-text-window-reverse"></i><span>Promoções</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="contato.html">
+                    <i class="bi bi-envelope"></i>
+                    <span>Contato</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="login.html">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Login</span>
+                </a>
+            </li>
+        </ul>
+    </aside><!-- End Sidebar-->
+
+    <!-- ======= Conteúdo Principal ======= -->
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <img src="assets/imagem/ipone16.jpeg" class="img-fluid product-image" alt="Produto 1">
+            </div>
+            <div class="col-lg-6 ms-5 d-flex flex-column justify-content-center">
+                <!-- Adicionada a classe ms-5 para mover para a direita -->
+                <h3>Apple iPhone 16 Pro Max (512Gb)</h3>
+                <p>Apple iPhone 16 Pro Max (512Gb) Titânio Natural</p>
+                <h4>R$ 12.599</h4>
+                <div class="text-center">
+
+                    <a href="#" class="btn btn-primary  w-100"
+                        onclick="addToCart('Produto 1', 150); window.location.href='carrinho.html';">
+                        Adicionar ao Carrinho
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main><!-- End Conteúdo Principal -->
+
+    <footer class="mt-5 text-center">
+        <p>&copy; 2024 RIGS Store. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function addToCart(productName, price) {
+            alert('Produto ' + productName + ' adicionado ao carrinho!');
+            // Aqui você poderia integrar com um back-end ou localStorage para armazenar o carrinho de compras
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
